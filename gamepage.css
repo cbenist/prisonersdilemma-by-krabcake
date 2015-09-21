@@ -1,0 +1,12 @@
+body{
+	background-image:url("pbs.jpg");
+}
+
+.image{
+
+    position: absolute;
+    left: 3;
+    top: 3;
+    right: 3;
+    bottom: 3;
+}
