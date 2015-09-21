@@ -1,5 +1,5 @@
 /* roughcustom.css */
-.navbar-left, .body, .navbar-right{
+.navbar-left-cust, .body, .navbar-right-cust{
     text-align: center;
     background-color: darkslateblue; 
     float: left;
@@ -16,7 +16,7 @@ body{
     width: 46%;
 }
 
-.container{
+.container-cust{
     width: 100%;
     overflow: hidden;
 }
