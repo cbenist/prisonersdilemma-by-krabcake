@@ -26,6 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             $dbfirstname = $row['first_name'];
             $usertype = $row['user_type'];
             $idVar = $row['id'];
+            $online = $row['netstat'];
         }
 
         //create condition to check if email and password are equal to the returned row	
@@ -36,8 +37,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                     $_SESSION["storedID"] = $idVar;
                     $_SESSION["storedEmail"] = $dbemail;
                     $_SESSION["storedUserType"] = $usertype;
+                    $_SESSION["online"] = $online;
                     ini_set('session.gc_maxlifetime', 1800);
                     session_set_cookie_params(1800);
+                    $q = "UPDATE users SET netstat='online' WHERE email = '" .$login_email."'";
+                    $r = mysqli_query($dbc, $q);
             }
             else
             {

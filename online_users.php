@@ -1,7 +1,8 @@
-
 <?php
-error_reporting(0);
-session_start();
+    include("connection.php");
+   
+    error_reporting(0);
+    session_start();
   if($_SESSION["storedEmail"] != ''){
     
         if($_SESSION["storedUserType"] == 2)
@@ -14,8 +15,11 @@ session_start();
    }else{
    include("navbar.php");
    }
+ echo "<br/>";
+    $r = mysqli_query($dbc, "SELECT * FROM users WHERE netstat='online'");
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +28,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/structurecss.css">
-  <title>My Profile</title>
+  <title>Prisoner's Dilemma</title>
 </head>
 
 <link href="../css/structurecss.css" rel="stylesheet">
@@ -39,21 +43,31 @@ session_start();
         <div id="main-wrapper" class="col-md-10 pull-right">
             <div id="main">
               <div class="page-header">
-                <h3>Login</h3>
+                <h3>Online Users</h3>
               </div>
-              <p><form action="login.php" method="post">
+                
+<?php
     
-    <p>Email: <input type="text" name= "login_email" size="40" maxlength="50" /></p>
-	<p>Password: <input type="password" name="login_password" maxlength="50" id = "initial"></textarea></p> 
-    <input type= "submit" name="submit" value="Login" />
-    	   
-	</form></p>
-    <p>No account? <a href='userform.php'>Register Here</a></p>
+echo "<table align='center' width=80% border='1' cellspacing='3' cellpadding='3' width='7'>
+    <tr>
+        <td align='left'><b>Name</b></td>
+        <td align='left'><b>Email</b></td>
+        <td align='left'><b>Score</b></td>
+    </tr>";
+
+while ($row = mysqli_fetch_array($r))
+    {
+        echo "<tr>
+           
+            <td align='left'>".$row['last_name'].", ".$row['first_name']."</td> 
+            <td align='left'>".$row['email']."</td>
+            <td align='left'>".$row['score']."</td>
+            
+        </tr>";
+    } 
+?>
             </div>
           
-            <div class="col-md-12 footer">
-             
-            </div>
           
         </div>
 </div>

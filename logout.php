@@ -1,5 +1,13 @@
 <?php
+include("connection.php");
 session_start();
+
+$q = "UPDATE users SET netstat='offline' WHERE username = '" .$_SESSION['storedEmail']."'";
+    $r = mysqli_query($dbc, $q);
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html>

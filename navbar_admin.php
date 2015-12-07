@@ -16,8 +16,8 @@ echo "
             
             <li><a href='output.php'>View Users</a></li>
             <li><a href='userprofile.php'>User Profile</a></li>
-            <li></li>
-            <li></li>
+            <li><a href='game.php'>Game</a></li>
+            <li><a href='online_users.php'>Who's Online</a></li>
             <li></li>
         </ul>
         <ul class='nav navbar-nav pull-right'>

@@ -18,6 +18,7 @@ echo "
             
             <li><a href='userprofile.php'>User Profile</a></li>
             <li><a href='game.php'>Game</a></li>
+            <li><a href='online_users.php'>Who's Online</a></li>
             
         </ul>
         <ul class='nav navbar-nav pull-right'>
@@ -47,6 +48,7 @@ echo "
             <li><a href='userform.php'>Register</a></li>
             <li><a href='userprofile.php'>User Profile</a></li>
             <li><a href='game.php'>Game</a></li>
+            <li><a href='online_users.php'>Who's Online</a></li>
             
         </ul>
         <ul class='nav navbar-nav pull-right'>
