@@ -2,7 +2,7 @@
 //define variables
 $hostname = "localhost";
 $username = "root";
-$password = "";
+$password = "krabcake";
 $dbname = "prisoners_dilemma";
 
 //making the connection to mysql

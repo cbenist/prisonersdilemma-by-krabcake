@@ -2,18 +2,10 @@
 include("connection.php");
 session_start();
 
-$q = "UPDATE users SET netstat='offline' WHERE username = '" .$_SESSION['storedEmail']."'";
+    $q = "UPDATE users SET netstat='offline' WHERE email='" .$_SESSION['storedEmail']."'";
     $r = mysqli_query($dbc, $q);
 
 
-
-
-?>
-<!DOCTYPE html>
-<html>
-<body>
-
-<?php
 // remove all session variables
 session_unset(); 
 
@@ -22,6 +14,9 @@ session_destroy();
 
 header("Location: index.php");
 ?>
+<!DOCTYPE html>
+<html>
+<body>
 
 </body>
 </html>
